@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    select, input, button {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+    input {
+      width: 80px;
+      text-align: center;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .linha {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <select id="operacao">
+      <option value="soma">+</option>
+      <option value="subtracao">−</option>
+      <option value="multiplicacao">×</option>
+      <option value="divisao">÷</option>
+      <option value="porcentagem">%</option>
+    </select>
+
+    <br><br>
+
+    <div class="linha">
+
+      <input type="number" id="valor1" value="20">
+
+      <span id="simbolo">+</span>
+
+      <input type="number" id="valor2" value="50">
+
+      <button onclick="calcular()">=</button>
+
+      <input type="number" id="resultado" readonly>
+
+    </div>
+
+  </div>
+
+  <script>
+    function calcular() {
+
+      let valor1 = Number(document.getElementById("valor1").value);
+      let valor2 = Number(document.getElementById("valor2").value);
+      let operacao = document.getElementById("operacao").value;
+
+      let resultado;
+
+      if (operacao === "soma") {
+        resultado = valor1 + valor2;
+      }
+
+      if (operacao === "subtracao") {
+        resultado = valor1 - valor2;
+      }
+
+      if (operacao === "multiplicacao") {
+        resultado = valor1 * valor2;
+      }
+
+      if (operacao === "divisao") {
+        resultado = valor1 / valor2;
+      }
+
+      if (operacao === "porcentagem") {
+        resultado = (valor1 / 100) * valor2;
+      }
+
+      document.getElementById("resultado").value = resultado;
+    }
+
+    document.getElementById("operacao").addEventListener("change", function() {
+
+      let simbolos = {
+        soma: "+",
+        subtracao: "−",
+        multiplicacao: "×",
+        divisao: "÷",
+        porcentagem: "%"
+      };
+
+      document.getElementById("simbolo").textContent =
+        simbolos[this.value];
+
+    });
+  </script>
+
+</body>
+</html>

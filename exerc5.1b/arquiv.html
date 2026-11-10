@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="arquiv.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Esquerda: Listbox com as siglas -->
+        <div class="painel-esquerdo">
+            <select id="selectPacientes" size="4">
+                <option value="0" selected>Pedro Rafael</option>
+                <option value="1">Felipe Pedrosa</option>
+                <option value="2">Ana Livia</option>
+                <option value="3">Zacarias Santos</option>
+            </select>
+        </div>
+
+        <!-- Meio: Botão -->
+        <div class="painel-meio">
+            <button id="btnDetalhes">Detalhes</button>
+        </div>
+
+        <!-- Direita: Quatro divs/quadros de informações -->
+        <div class="painel-direito">
+            <div class="card-info">
+                <strong>CPF</strong>
+                <div id="divCPF">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Idade</strong>
+                <div id="divIdade">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Doença</strong>
+                <div id="divDoenca">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Foto</strong>
+                <div id="divFoto">-</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="arquiv.js"></script>
+</html>

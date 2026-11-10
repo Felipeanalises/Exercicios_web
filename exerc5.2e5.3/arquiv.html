@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="arquiv.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Esquerda: Listbox com as siglas -->
+        <div class="painel-esquerdo">
+            <select id="selectPacientes" size="4">
+                <option value="0" selected>Pedro Rafael</option>
+                <option value="1">Felipe Pedrosa</option>
+                <option value="2">Ana Livia</option>
+                <option value="3">Zacarias Santos</option>
+            </select>
+        </div>
+
+        <!-- Meio: Botão -->
+        <div class="painel-meio">
+            <button id="btnDetalhes">Detalhes</button>
+            <button id="btnAdicionar">Adicionar</button>
+        </div>
+
+        <!-- Direita: Quatro divs/quadros de informações -->
+        <div class="painel-direito">
+            <div class="card-info">
+                <strong>CPF</strong>
+                <div id="divCPF">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Idade</strong>
+                <div id="divIdade">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Doença</strong>
+                <div id="divDoenca">-</div>
+            </div>
+            <div class="card-info">
+                <strong>Cidade</strong>
+                <div id="divCidade">-</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Formulário para Inserção de Dados -->
+    <div class="modal-overlay" id="modalForm">
+        <div class="modal-content">
+            <h3>Cadastrar novo paciente</h3>
+            <div class="form-group">
+                <label for="inputNome">Nome:</label>
+                <input type="text" id="inputNome" placeholder="Ex: João da Silva">
+            </div>
+            <div class="form-group">
+                <label for="inputCpf">CPF:</label>
+                <input type="text" id="inputCpf" placeholder="Ex: 123.456.789-00">
+            </div>
+            <div class="form-group">
+                <label for="inputIdade">Idade:</label>
+                <input type="text" id="inputIdade" placeholder="Ex: 30">
+            </div>
+            <div class="form-group">
+                <label for="inputDoenca">Doença:</label>
+                <input type="text" id="inputDoenca" placeholder="Ex: Diabetes">
+            </div>
+            <div class="form-group">
+                <label for="inputCidade">Cidade:</label>
+                <input type="text" id="inputCidade" placeholder="Ex: São Paulo">
+            </div>
+            <div class="modal-acoes">
+                <button type="button" class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button type="button" class="btn-salvar" id="btnSalvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="arquiv.js"></script>
+</html>
